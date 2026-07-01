@@ -59,7 +59,8 @@ jobs:
       - name: Apply CPUInfo Spoof
         run: |
           cd kernel_workspace
-          python3 ../scripts/patch_cpuinfo.py
+          wget https://raw.githubusercontent.com/${{ github.repository }}/refs/heads/${{ github.ref_name }}/scripts/patch_cpuinfo.py
+          python3 patch_cpuinfo.py
           
       - name: build
         run: |
